@@ -1,0 +1,37 @@
+<div>
+    {{#if user}}
+    <h1>Bienvenido,{{user.nombre}}(rol:{{user.rol}})!</h1>
+    {{else}}
+        <p>Cargando datos...</p>
+    {{/if}}
+    <h1>Products</h1>
+    <form>
+        <input type="text" name="title" id="" placeholder="title" required>
+        <input type="text" name="description" id="" placeholder="description" required>
+        <input type="number" name="stock" id="" placeholder="stock" required>
+        <input type="number" name="price" id="" placeholder="price" required>
+        <button type="submit">Registrar</button>
+    </form>
+    <ul>
+        {{#each products}}
+        <li>
+            <p>Títle: {{this.Title}}</p>
+            <p>Descripción: {{this.Description}}</p>
+            <p>Precio: {{this.Price}}</p>
+            <p>Stock: {{this.Stock}}</p>
+            <p>id: {{this._id}}</p>
+            <button data-product-id="{{this._id}}">Agregar al carrito</button>
+        </li>
+        {{/each}}
+    </ul>
+    {{#if hasPrevPage}}
+        <a href="{{prevLink}}"><button>Anterior</button></a>
+    {{/if}}
+    {{#if hasNextPage}}
+        <a href="{{nextLink}}"><button>Siguiente</button></a>
+    {{/if}}
+    <a href="/profile">Ir al profile</a>
+    <form action="/logout" method="post">
+        <button type="submit">Desloguearme!</button>
+    </form>
+</div>

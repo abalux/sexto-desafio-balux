@@ -1,0 +1,14 @@
+<h1>Tu perfil (sin datos sensibles)</h1>
+
+{{#if user}}
+    <p>Nombre: {{user.Nombre}}</p>
+    <p>Apellido: {{user.Apellido}}</p>
+    <p>Correo electronico: {{user.Email}}</p>
+    <p>rol: {{user.rol}}</p>
+{{else}}
+    <p>No se encontraron datos de usuario.</p>
+{{/if}}
+<a href="/products">Ir a products</a>
+<form action="/logout" method="post">
+    <button type="submit">Desloguearme!</button>
+</form>
