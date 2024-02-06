@@ -4,7 +4,7 @@ import passport from 'passport'
 export const sesionesRouter = Router()
 
 // login
-// local
+
 
 sesionesRouter.get('/login', function loginView(req, res) {
     res.render('login.handlebars', {
@@ -23,7 +23,6 @@ sesionesRouter.post('/login',
 
 sesionesRouter.get('/githublogin',
     passport.authenticate('github', { scope: ['user:email'] })
-    //tene en cuenta esto
 )
 
 sesionesRouter.get('/githubcallback',

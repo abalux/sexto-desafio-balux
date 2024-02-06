@@ -5,7 +5,7 @@ import { engine } from 'express-handlebars'
 import { __dirname } from './utils.js'
 
 import { MONGODB_CNX_STR, PORT } from './config.js'
-//import { apiRouter } from './routers/api/apirest.router.js'
+
 import { webRouter } from './routers/webRouter.js'
 import { sesiones } from './middlewares/sesiones.js'
 import { autenticacion } from './middlewares/passport.js'
@@ -32,4 +32,3 @@ app.use(autenticacion)
 app.use('/static', express.static('./static'))
 
 app.use('/', webRouter)
-//app.use('/api', apiRouter)

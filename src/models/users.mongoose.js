@@ -40,7 +40,6 @@ const schema = new mongoose.Schema({
     
         },
         autenticar: async function (Email , Password) {
-//ACA CAMBIASTE EMAIL POR USERNAME
             let datosUsuario
 
             if (isAdmin(Email , Password)) {
